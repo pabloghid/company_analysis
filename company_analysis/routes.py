@@ -19,5 +19,6 @@ def index():
         if i > max_tweets:
             break
         tweets_list.append(Tweet(tweet.date, tweet.url, tweet.content))
+        i+=1
 
     return render_template('list.html', tweets=tweets_list)
