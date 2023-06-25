@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container p-3">
+    <div class="row">
+        <h1>Analisador de empresas</h1>
+    </div>
+    <div class="row">
+        <form action="/search" method="post">
+            <label for="nome_empresa">Digite o nome da empresa:</label><br>
+            <input type="text" id="nome_empresa" name="nome_empresa"><br><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>
+{% endblock %}

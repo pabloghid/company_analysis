@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<table class="table ">
+    <thead>
+        <tr>
+            <th scope="col">data</th>
+            <th scope="col">url</th>
+            <th scope="col">texto</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tweet in tweets%}
+        <tr>
+            <td>
+                {{tweet.date}}
+            </td>
+            <td>
+                <a>{{tweet.url}}</a>
+            </td>
+            <td>
+                {{tweet.content}}
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+{% endblock %}
