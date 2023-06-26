@@ -13,7 +13,6 @@ def analyser(content):
     polarity = 0
 
     contents = []
-    ## Verificar idioma, traduzir para inglês se precisar
     for sentence in content:
         if detect(sentence) != 'en':
             sentence = translate(sentence)
