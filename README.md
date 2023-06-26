@@ -3,9 +3,9 @@ Trabalho para a disciplina de Inteligência Artificial
 
 ## ToDo
 
-- [ ] Criar rotas
-- [ ] Configurar scraper para twitter ([snscrape](https://github.com/JustAnotherArchivist/snscrape))
-- [ ] Buscar informações sobre empresa buscada 
+- [x] Criar rotas
+- [x] Configurar scraper para twitter ([snscrape](https://github.com/JustAnotherArchivist/snscrape))
+- [x] Buscar informações sobre empresa buscada 
 - [ ] Mostrar ao usuário em formas gráficas
 
 ## Instalação
@@ -34,6 +34,15 @@ source venv/bin/activate
 Instale as dependências do projeto:
 ```bash
 pip install -r requirements.txt
+```
+
+É necessário fazer alterações na biblioteca google_trans_new para que funcione corretamente. Para isso, no arquivo google_trans_new/google_trans_new.py, na linha 151 e 233, troque 
+```bash
+response = (decoded_line + ']')
+```
+para
+```bash
+response = (decoded_line)
 ```
 
 Para inicializar o projeto com o debug ligado, para desenvolvimento, utilize o comando abaixo ou execute o arquivo run.py.
