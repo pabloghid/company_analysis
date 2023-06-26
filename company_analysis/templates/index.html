@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Título Centralizado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
             background-color: rgb(136, 207, 249);
@@ -9,16 +10,32 @@
             padding: 0;
         }
         
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+        
+        .navbar .navbar-brand {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .navbar .btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+        
         .form-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 50vh; /* Ajuste a altura conforme necessário */
+            height: 70vh; /* Ajuste a altura conforme necessário */
         }
         
         .title {
-            color: #100f0f;
+            color: #333;
             font-family: "Arial", sans-serif;
             font-size: 32px;
             text-align: center;
@@ -26,9 +43,9 @@
         }
         
         .subtitle {
-            color: #100f0f;
+            color: #666;
             font-family: "Arial", sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             text-align: center;
             margin-bottom: 30px;
         }
@@ -39,6 +56,8 @@
         
         .form-container label,
         .form-container input[type="text"],
+        .form-container input[type="date"],
+        .form-container input[type="number"],
         .form-container input[type="submit"] {
             display: block;
             margin-bottom: 10px;
@@ -50,29 +69,83 @@
             margin-right: auto;
         }
 
-        .form-container input[type="text"] {
+        .form-container input[type="text"],
+        .form-container input[type="date"],
+        .form-container input[type="number"] {
             width: 200px; /* Ajuste a largura conforme necessário */
             margin-left: auto;
             margin-right: auto;
         }
-        .form-container label {
-            font-size: 16px; /* Ajuste o tamanho da fonte  */
-            font-family: Arial, sans-serif; /* Ajuste a família da fonte c */
-            color: #191818; /* Ajuste a cor da fonte  */
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Análise de Empresas com IA</h1>
-        <h2 class="subtitle">Faça uma busca para obter informações sobre uma empresa</h2>
-    </div>
-    <div class="form-container">
-        <form action="/search" method="post">
-            <label for="nome_empresa">Digite o nome da empresa que deseja fazer a busca:</label><br>
-            <input type="text" id="nome_empresa" name="nome_empresa"><br><br>
-            <input type="submit" value="Enviar">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Análise de Empresas com IA</a>
+        <form class="d-flex" action="/outra-pagina.html">
+            <button class="btn" type="submit">Gráficos</button>
         </form>
-    </div>
+    </nav>
+    
+    <div class="container">
+        <h2 class="subtitle">Faça uma busca para obter informações sobre uma empresa</h2>
+        <div class="form-container">
+            <form action="/search" method="post">
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label for="data_inicial" class="form-label">Data inicial:</label>
+                        <input type="date" class="form-control" id="data_inicial" name="data_inicial">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="data_final" class="form-label">Data final:</label>
+                        <input type="date" class="form-control" id="data_final" name="data_final">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="quantidade_tweets" class="form-label">Digite a quantidade de tweets desejada:</label>
+                    <input type="number" class="form-control form-control-sm" id="quantidade_tweets" name="quantidade_tweets" max="99" maxlength="2">
+                </div>
+                <div class="mb-3">
+                    <label for="nome_empresa" class="form-label">Digite o nome da empresa que deseja fazer a busca:</label>
+                    <input type="text" class="form-control" id="nome_empresa" name="nome_empresa">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div> 
+ <!-  Logo ->
+ <style>
+    .logos-bar {
+        background-color: #000;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logos-bar img {
+        height: 40px;
+        margin: 0 10px;
+    }
+</style>
+
+<div class="logos-bar">
+    <a href="https://www.google.com" target="_blank">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo Google">
+    </a>
+    <a href="https://www.microsoft.com" target="_blank">
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Logo Microsoft">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <img src="https://logo.clearbit.com/facebook.com" alt="Logo Facebook">
+    </a>
+    <a href="https://www.amazon.com" target="_blank">
+        <img src="https://logo.clearbit.com/amazon.com" alt="Logo Amazon">
+    </a>
+    <a href="https://www.apple.com" target="_blank">
+        <img src="https://logo.clearbit.com/apple.com" alt="Logo Apple">
+    </a>
+</div>
 </body>
 </html>
