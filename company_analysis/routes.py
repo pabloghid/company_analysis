@@ -1,7 +1,7 @@
-from .models.Tweet import Tweet
 from . import app
-from flask import render_template, request
+from flask import render_template, request, redirect
 import snscrape.modules.twitter as sntwitter
+from . import analyser
 
 @app.route('/')
 @app.route('/index')
@@ -20,7 +20,11 @@ def search():
         for tweet in scraper.get_items():
             if i > max_tweets:
                 break
-            tweets_list.append(Tweet(tweet.date, tweet.url, tweet.content))
+            tweets_list.append(tweet.content)
             i+=1
+        analysis = analyser.analyser(tweets_list)
 
-        return render_template('list.html', tweets=tweets_list)
+        return render_template('list.html', tweets=tweets_list, analysis=analysis)
+    
+    elif request.method == 'GET':
+        return redirect("index")

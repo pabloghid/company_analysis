@@ -5,7 +5,7 @@ Trabalho para a disciplina de Inteligência Artificial
 
 - [x] Criar rotas
 - [x] Configurar scraper para twitter ([snscrape](https://github.com/JustAnotherArchivist/snscrape))
-- [x] Buscar informações sobre empresa buscada 
+- [x] Analisar informações sobre empresa buscada 
 - [ ] Mostrar ao usuário em formas gráficas
 
 ## Instalação
