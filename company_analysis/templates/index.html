@@ -1,68 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Título Centralizado</title>
-    <style>
-        body {
-            background-color: rgb(136, 207, 249);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 50vh; /* Ajuste a altura conforme necessário */
-        }
-        
-        .title {
-            color: #100f0f;
-            font-family: "Arial", sans-serif;
-            font-size: 32px;
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .subtitle {
-            color: #100f0f;
-            font-family: "Arial", sans-serif;
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .form-container form {
-            text-align: center;
-        }
-        
-        .form-container label,
-        .form-container input[type="text"],
-        .form-container input[type="submit"] {
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .form-container input[type="submit"] {
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+{% extends 'base.html' %}
 
-        .form-container input[type="text"] {
-            width: 200px; /* Ajuste a largura conforme necessário */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .form-container label {
-            font-size: 16px; /* Ajuste o tamanho da fonte  */
-            font-family: Arial, sans-serif; /* Ajuste a família da fonte c */
-            color: #191818; /* Ajuste a cor da fonte  */
-        }
-    </style>
-</head>
-<body>
+{% block main %}
+
     <div class="container">
         <h1 class="title">Análise de Empresas com IA</h1>
         <h2 class="subtitle">Faça uma busca para obter informações sobre uma empresa</h2>
@@ -74,5 +13,4 @@
             <input type="submit" value="Enviar">
         </form>
     </div>
-</body>
-</html>
+    {% endblock %}

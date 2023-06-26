@@ -1,0 +1,57 @@
+body {
+    background-color: rgb(136, 207, 249);
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.title {
+    color: #100f0f;
+    font-family: "Arial", sans-serif;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.subtitle {
+    color: #100f0f;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container form {
+    text-align: center;
+}
+
+.form-container label,
+.form-container input[type="text"],
+.form-container input[type="submit"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-container input[type="submit"] {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-container input[type="text"] {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-container label {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #191818;
+}
