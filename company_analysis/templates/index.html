@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<div class="container p-3">
-    <div class="row">
-        <h1>Analisador de empresas</h1>
+
+    <div class="container">
+        <h1 class="title">Análise de Empresas com IA</h1>
+        <h2 class="subtitle">Faça uma busca para obter informações sobre uma empresa</h2>
     </div>
-    <div class="row">
+    <div class="form-container">
         <form action="/search" method="post">
-            <label for="nome_empresa">Digite o nome da empresa:</label><br>
+            <label for="nome_empresa">Digite o nome da empresa que deseja fazer a busca:</label><br>
             <input type="text" id="nome_empresa" name="nome_empresa"><br><br>
             <input type="submit" value="Enviar">
         </form>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
