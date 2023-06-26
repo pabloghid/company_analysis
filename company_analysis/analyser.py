@@ -23,7 +23,7 @@ def analyser(content):
         polarity += item.sentiment.polarity
         print(item, "\n", item.sentiment)
 
-        if(0.01 < item.sentiment.polarity < 0.09):
+        if(0 <= item.sentiment.polarity < 0.09):
             neutral += 1
             print("neutro")
         elif(item.sentiment.polarity < 0):
