@@ -1,33 +1,65 @@
 {% extends 'base.html' %}
 
 {% block main %}
+
 <div class="container">
-    <table class="table ">
-        <thead>
-            <tr>
-                <th scope="col">data</th>
-                <th scope="col">url</th>
-                <th scope="col">texto</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for tweet in tweets_details%}
-            <tr>
-                <td>
-                    {{tweet.date}}
-                </td>
-                <td>
-                    {{tweet.url}}
-                </td>
-                <td>
-                    {{tweet.content}}
-                </td>
-            </tr>
-            {% endfor %}
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">Opiniões da empresa "{{company_name}}"</h1>
+        <p class="lead">dos dias Y até Z, com limitação de A tweets</p>
+    </div>
 
-        </tbody>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gráfico</h5>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Opiniões da Empresa {{company_name}}</h5>
+                    <p class="card-text">A empresa {{company_name}} apresenta {{ analysis['positive']}}% de
+                        tweets com opiniões positivas, {{ analysis['neutral']}}% de tweets com opiniões
+                        neutras e {{ analysis['negative']}}% de tweets com opiniões negativas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </table>
+    <div class="mt-4">
+        <h3>Texto adicional</h3>
+        <p>Aqui você pode adicionar texto adicional ou qualquer outro conteúdo que desejar.</p>
+    </div>
+
+    <div class="mt-4">
+        <h3>EXEMPLOS DE TWEETS AVALIADOS:</h3>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th scope="col">Data</th>
+                    <th scope="col">Texto</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tweet in tweets_details[:3] %}
+                <tr>
+                    <td>
+                        {{tweet.date}}
+                    </td>
+                    <td>
+                        <a href="{{tweet.url}}">{{tweet.content}}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
     <div class="row">
         <div class="col-md-6">
             <canvas id="doughnutChart"></canvas>

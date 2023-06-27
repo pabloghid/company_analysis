@@ -14,7 +14,7 @@ def search():
     if request.method == 'POST':
         company_name = request.form.get('company_name')
         ## TODO: pegar request de max_tweets, since-until, limits e outros filtros
-        max_tweets = 30
+        max_tweets = 10
         i = 0
         tweets_list = []
         tweets_details = []
