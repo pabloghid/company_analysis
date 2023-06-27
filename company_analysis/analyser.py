@@ -40,17 +40,6 @@ def analyser(content):
         "positive": positive, "negative": negative, "neutral": neutral
     }
 
-    ## TODO: Refazer para plotar no navegador
-"""     labels = ['Positivo ['+str(positive)+'%]', 'Neutro ['+str(neutral)+'%]', 'Negativo ['+str(negative)+'%]']
-    sizes = [positive, neutral, negative]
-    colors = ['green', 'lightgray', 'red']
-    patches,texts = plt.pie(sizes, colors=colors, startangle=90)
-
-    plt.legend(patches, labels, loc="best")
-    plt.axis('equal')
-    plt.tight_layout()
-    plt.show() """
-
 def translate(sentence):
     translator = google_translator(url_suffix="com")
     translate_text = translator.translate(sentence,lang_tgt='en') 
