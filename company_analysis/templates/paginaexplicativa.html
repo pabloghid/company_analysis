@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Funcionamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1D9BF0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .navbar {
+            background-color: rgb(40, 39, 39);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar .back-button {
+            float: left;
+        }
+
+        .back-button button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .testimonial-balloon {
+            max-width: 500px;
+            padding: 13px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .footer{
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+            display: inline;
+        }
+        .logos-bar {
+            background-color: #000;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .logos-bar img {
+            height: 40px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="back-button">
+            <button onclick="history.back()">Voltar</button>
+        </div>
+        <h1>Funcionamento</h1>
+    </div>
+
+    <div class="testimonial-balloon">
+        <p class="testimonial-text">O Sistema funciona a partir de uma análise de tweets sobre uma determinada empresa que é pesquisado na tela inicial.
+            A partir da pesquisa, os tweets são analisados e separados em pontos neutros, pontos positivos ou pontos negativos de acordo com a Inteligencia artificial integrada
+            no projeto. Então é inspecionado e é retornado os resultados em gráficos.
+             
+        </p>
+
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+<div class="logos-bar">
+    <a href="https://www.google.com" target="_blank">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo Google">
+    </a>
+    <a href="https://www.microsoft.com" target="_blank">
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Logo Microsoft">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <img src="https://logo.clearbit.com/facebook.com" alt="Logo Facebook">
+    </a>
+    <a href="https://www.amazon.com" target="_blank">
+        <img src="https://logo.clearbit.com/amazon.com" alt="Logo Amazon">
+    </a>
+    <a href="https://www.apple.com" target="_blank">
+        <img src="https://logo.clearbit.com/apple.com" alt="Logo Apple">
+    </a>
+</div>
+</body>
+
+<section class="">
+<div class="logos-bar">
+    <a href="https://www.google.com" target="_blank">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo Google">
+    </a>
+    <a href="https://www.microsoft.com" target="_blank">
+        <img src="https://logo.clearbit.com/microsoft.com" alt="Logo Microsoft">
+    </a>
+    <a href="https://www.facebook.com" target="_blank">
+        <img src="https://logo.clearbit.com/facebook.com" alt="Logo Facebook">
+    </a>
+    <a href="https://www.amazon.com" target="_blank">
+        <img src="https://logo.clearbit.com/amazon.com" alt="Logo Amazon">
+    </a>
+    <a href="https://www.apple.com" target="_blank">
+        <img src="https://logo.clearbit.com/apple.com" alt="Logo Apple">
+    </a>
+</div>
+</section>
+</div>
+
+<footer >
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0); color: #fff;">
+    © 2023 Copyright
+</div>
+</footer>
+</html>

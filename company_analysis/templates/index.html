@@ -123,6 +123,39 @@
             margin-top: auto;
             display: inline;
         }
+        .logos-bar {
+            background-color: #000;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        .logos-bar img {
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        .saibamais-button{
+            align-items: center;
+            background-color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .saibamais-button:hover {
+            background-color: #D0D1D3;
+        }
+        
     </style>
 </head>
 <body>
@@ -158,31 +191,32 @@
                 <div class="mb-3">
                     <button class="send-button" type="submit">Enviar</button>
                 </div>
+                <div class="saibamais-button">
+                    <a href="{{ url_for('saibamais') }}" style="color: #000;">Saiba mais</a>
+                </div>
             </form>
         </div>
     </div> 
 
- <style>
-    .logos-bar {
-            background-color: #000;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: auto;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-    
-        .logos-bar img {
-            height: 40px;
-            margin: 0 10px;
-        }
-</style>
-
 </div>
+    
+    <div class="logos-bar">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Logo Google">
+        </a>
+        <a href="https://www.microsoft.com" target="_blank">
+            <img src="https://logo.clearbit.com/microsoft.com" alt="Logo Microsoft">
+        </a>
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="https://logo.clearbit.com/facebook.com" alt="Logo Facebook">
+        </a>
+        <a href="https://www.amazon.com" target="_blank">
+            <img src="https://logo.clearbit.com/amazon.com" alt="Logo Amazon">
+        </a>
+        <a href="https://www.apple.com" target="_blank">
+            <img src="https://logo.clearbit.com/apple.com" alt="Logo Apple">
+        </a>
+    </div>
 </body>
 
 <section class="">
@@ -203,11 +237,12 @@
             <img src="https://logo.clearbit.com/apple.com" alt="Logo Apple">
         </a>
     </div>
-  </section>
+</section>
 </div>
 
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0); color: #fff;">
-  © 2023 Copyright
-</div>
+<footer >
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0); color: #fff;">
+        © 2023 Copyright
+    </div>
 </footer>
 </html>
