@@ -11,22 +11,22 @@
         <form action="/search" method="post" class="form">
             <div class="row mb-3">
                 <div class="col-sm-6">
-                    <label for="since-date" class="form-label">Data inicial:</label>
-                    <input type="date" class="form-control" id="since-date" name="since-date">
+                    <label for="since_date" class="form-label">Data inicial:</label>
+                    <input type="date" class="form-control" id="since_date" name="since_date" required>
                 </div>
                 <div class="col-sm-6">
-                    <label for="for-date" class="form-label">Data final:</label>
-                    <input type="date" class="form-control" id="for-date" name="for-date">
+                    <label for="until_date" class="form-label">Data final:</label>
+                    <input type="date" class="form-control" id="until_date" name="until_date" required>
                 </div>
             </div>
             <div class="mb-3">
                 <label for="tweet_quantity" class="form-label">Digite a quantidade de tweets desejada:</label>
-                <input type="number" class="form-control form-control-sm" id="quantidade_tweets"
-                    name="tweet_quantity" max="99" maxlength="2">
+                <input type="number" class="form-control form-control-sm" id="tweet_quantity"
+                    name="tweet_quantity" max="99" maxlength="2" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="company_name">Digite o nome da empresa que deseja fazer a busca:</label>
-                <input type="text" class="form-control" id="company_name" name="company_name">
+                <input type="text" class="form-control" id="company_name" name="company_name" required>
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Enviar</button>
