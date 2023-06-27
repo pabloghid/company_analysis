@@ -4,16 +4,37 @@ body {
     padding: 0;
 }
 
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar .btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 70vh; /* Ajuste a altura conforme necessário */
 }
 
 .title {
-    color: #100f0f;
+    color: #333;
     font-family: "Arial", sans-serif;
     font-size: 32px;
     text-align: center;
@@ -21,9 +42,9 @@ body {
 }
 
 .subtitle {
-    color: #100f0f;
+    color: #121111;
     font-family: "Arial", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -34,6 +55,8 @@ body {
 
 .form-container label,
 .form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"],
 .form-container input[type="submit"] {
     display: block;
     margin-bottom: 10px;
@@ -45,13 +68,28 @@ body {
     margin-right: auto;
 }
 
-.form-container input[type="text"] {
-    width: 200px;
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"] {
+    width: 200px; /* Ajuste a largura conforme necessário */
     margin-left: auto;
     margin-right: auto;
 }
-.form-container label {
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    color: #191818;
+
+.logos-bar {
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.logos-bar img {
+    height: 40px;
+    margin: 0 10px;
 }

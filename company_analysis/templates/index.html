@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block main %}
 
 <div class="container">
@@ -10,11 +9,31 @@
 
     <div class="form-container">
         <form action="/search" method="post" class="form">
+            <div class="row mb-3">
+                <div class="col-sm-6">
+                    <label for="since-date" class="form-label">Data inicial:</label>
+                    <input type="date" class="form-control" id="since-date" name="since-date">
+                </div>
+                <div class="col-sm-6">
+                    <label for="for-date" class="form-label">Data final:</label>
+                    <input type="date" class="form-control" id="for-date" name="for-date">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="tweet_quantity" class="form-label">Digite a quantidade de tweets desejada:</label>
+                <input type="number" class="form-control form-control-sm" id="quantidade_tweets"
+                    name="tweet_quantity" max="99" maxlength="2">
+            </div>
             <div class="mb-3">
                 <label class="form-label" for="company_name">Digite o nome da empresa que deseja fazer a busca:</label>
                 <input type="text" class="form-control" id="company_name" name="company_name">
             </div>
-            <input type="submit" value="Enviar">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+            <div class="text-center">
+                <a href="{{ url_for('saibamais') }}">Saiba mais</a>
+            </div>
         </form>
     </div>
 </div>

@@ -9,6 +9,12 @@ from .models.Tweet import Tweet
 def index():
     return render_template('index.html')
 
+
+@app.route('/saibamais')
+def saibamais():
+    return render_template('paginaexplicativa.html')
+
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     if request.method == 'POST':
