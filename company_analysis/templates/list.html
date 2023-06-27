@@ -1,28 +1,62 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<table class="table ">
-    <thead>
-        <tr>
-            <th scope="col">texto</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for tweet in tweets%}
-        <tr>
-            <td>
-                {{tweet}}
-            </td>
-        </tr>
-        {% endfor %}
+<div class="container">
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">data</th>
+                <th scope="col">url</th>
+                <th scope="col">texto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tweet in tweets_details%}
+            <tr>
+                <td>
+                    {{tweet.date}}
+                </td>
+                <td>
+                    {{tweet.url}}
+                </td>
+                <td>
+                    {{tweet.content}}
+                </td>
+            </tr>
+            {% endfor %}
 
-    </tbody>
+        </tbody>
 
-</table>
-positivo: 
-{{analysis['positive']}}
-negativo:
-{{analysis['negative']}}
-neutro:
-{{analysis['neutral']}}
+    </table>
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="doughnutChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    var positiveValue = {{ analysis['positive']}};
+    var negativeValue = {{ analysis['negative']}};
+    var neutralValue = {{ analysis['neutral']}};
+
+    var donutChart = new Chart(document.getElementById('doughnutChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Positivo', 'Negativo', 'Neutro'],
+            datasets: [{
+                label: '% dos Tweets',
+                data: [positiveValue, negativeValue, neutralValue],
+                backgroundColor: ['#36a2eb', '#ff6384', '#ffce56']
+            }]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                position: 'bottom'
+            }
+        }
+    });
+</script>
+
 {% endblock %}
