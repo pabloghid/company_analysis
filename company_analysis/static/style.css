@@ -91,3 +91,66 @@ body {
     height: 40px;
     margin: 0 10px;
 }
+
+.navbar-brand {
+    margin-right: 0 !important;
+}
+.navbar h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.testimonial-balloon {
+    max-width: 500px;
+    padding: 13px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 80px;
+}
+.testimonial-text {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.testimonial-author {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.saibamais-button{
+    align-items: center;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.saibamais-button:hover {
+    background-color: #D0D1D3;
+}
+
+.send-button{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #1DA1F2;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.send-button:hover {
+    background-color: #bfddf3;
+}

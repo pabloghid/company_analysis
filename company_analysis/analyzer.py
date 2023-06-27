@@ -1,5 +1,4 @@
 from textblob import TextBlob
-import matplotlib.pyplot as plt
 from langdetect import detect
 from google_trans_new import google_translator
 

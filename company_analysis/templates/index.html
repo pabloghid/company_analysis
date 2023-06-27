@@ -21,18 +21,18 @@
             </div>
             <div class="mb-3">
                 <label for="tweet_quantity" class="form-label">Digite a quantidade de tweets desejada:</label>
-                <input type="number" class="form-control form-control-sm" id="tweet_quantity"
-                    name="tweet_quantity" max="99" maxlength="2" required>
+                <input type="number" class="form-control form-control-sm" id="tweet_quantity" name="tweet_quantity"
+                    max="99" maxlength="2" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="company_name">Digite o nome da empresa que deseja fazer a busca:</label>
                 <input type="text" class="form-control" id="company_name" name="company_name" required>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="mb-3">
+                <button class="send-button" type="submit">Enviar</button>
             </div>
-            <div class="text-center">
-                <a href="{{ url_for('saibamais') }}">Saiba mais</a>
+            <div class="saibamais-button">
+                <a href="{{ url_for('saibamais') }}" style="color: #000;">Saiba mais</a>
             </div>
         </form>
     </div>
