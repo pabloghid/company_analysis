@@ -30,9 +30,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Opiniões da Empresa {{company_name}}</h5>
-                <p class="card-text">A empresa {{company_name}} apresenta {{ analysis['positive']}}% de
-                    tweets com opiniões positivas, {{ analysis['neutral']}}% de tweets com opiniões
-                    neutras e {{ analysis['negative']}}% de tweets com opiniões negativas.</p>
+                <p class="card-text">A empresa {{company_name}} apresenta {{ analysis['positive']}}% de tweets com opiniões positivas, {{ analysis['neutral']}}% de tweets com opiniões neutras e {{ analysis['negative']}}% de tweets com opiniões negativas.</p>
             </div>
         </div>
     </div>
@@ -42,46 +40,12 @@
             <div class="card-body">
                 <h3>Opinião da IA</h3>
                 {% if neutral < positive and positive> negative %}
-                    <p class="card-text">A empresa {{company_name}} tem recebido uma quantidade significativa de
-                        opiniões
-                        positivas em suas
-                        análises de tweets.
-                        Os usuários elogiam seus produtos de alta qualidade, atendimento ao cliente excepcional e
-                        compromisso
-                        com a inovação. As avaliações favoráveis refletem a satisfação dos clientes e indicam que a
-                        empresa
-                        está
-                        indo bem em termos de reputação e desempenho no mercado.</p>
-
-                    {% elif neutral < negative and negative> positive %}
-                        <p class="card-text">As análises de tweets revelam que a empresa {{company_name}} tem recebido
-                            um
-                            número
-                            significativo de
-                            opiniões negativas. Os usuários expressam insatisfação com a qualidade dos produtos,
-                            problemas
-                            recorrentes no atendimento ao cliente e atrasos nas entregas. Essas críticas indicam que a
-                            empresa
-                            precisa fazer melhorias em várias áreas para melhorar sua reputação e garantir a satisfação
-                            dos
-                            clientes. É essencial que a empresa ouça atentamente essas opiniões e tome medidas
-                            corretivas
-                            para
-                            resolver os problemas levantados.</p>
-                        {% else %}
-                        <p class="card-text">Ao analisar os tweets relacionados à empresa {{company_name}}, observamos
-                            que a
-                            maioria das opiniões
-                            é neutra. Os usuários não expressam sentimentos extremos nem positivos nem negativos em
-                            relação
-                            à
-                            empresa. Essa neutralidade pode ser interpretada como um reflexo de uma experiência mediana
-                            ou
-                            uma
-                            falta de engajamento significativo por parte dos usuários. A empresa pode considerar
-                            explorar
-                            estratégias para atrair opiniões mais favoráveis ou engajar melhor sua base de clientes.</p>
-                        {% endif %}
+                    <p class="card-text">A empresa {{company_name}} tem recebido uma quantidade significativa d opiniõe positivas em sua análises de tweets Os usuários elogiam seus produtos de alta qualidade, atendimento ao cliente excepcional  compromiss com a inovação. As avaliações favoráveis refletem a satisfação dos clientes e indicam que  empres est indo bem em termos de reputação e desempenho no mercado.</p>
+                {% elif neutral < negative and negative> positive %}
+                    <p class="card-text">As análises de tweets revelam que a empresa {{company_name}} tem recebido um número significativo de opiniões negativas. Os usuários expressam insatisfação com a qualidade dos produtos, problemas recorrentes no atendimento ao cliente e atrasos nas entregas. Essas críticas indicam que a empresa precisa fazer melhorias em várias áreas para melhorar sua reputação e garantir a satisfação dos clientes. É essencial que a empresa ouça atentamente essas opiniões e tome medidas corretivas para resolver os problemas levantados.</p>
+                {% else %}
+                    <p class="card-text">Ao analisar os tweets relacionados à empresa {{company_name}}, observamos que a maioria das opiniões é neutra. Os usuários não expressam sentimentos extremos nem positivos nem negativos em relação à empresa. Essa neutralidade pode ser interpretada como um reflexo de uma experiência mediana ou uma falta de engajamento significativo por parte dos usuários. A empresa pode considerar explorar estratégias para atrair opiniões mais favoráveis ou engajar melhor sua base de clientes.</p>
+                {% endif %}
             </div>
         </div>
     </div>
