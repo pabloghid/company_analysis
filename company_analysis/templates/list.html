@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Gráfico</h5>
+                    <h5 class="card-title">Análise Geral</h5>
                     <canvas id="doughnutChart"></canvas>
                 </div>
             </div>
@@ -20,22 +20,74 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Opiniões da Empresa {{company_name}}</h5>
-                    <p class="card-text">A empresa {{company_name}} apresenta {{ analysis['positive']}}% de
-                        tweets com opiniões positivas, {{ analysis['neutral']}}% de tweets com opiniões
-                        neutras e {{ analysis['negative']}}% de tweets com opiniões negativas.</p>
+                    <h5 class="card-title">Análise por dia</h5>
+                    <canvas id="barChart"></canvas>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="mt-4">
-        <h3>Texto adicional</h3>
-        <p>Aqui você pode adicionar texto adicional ou qualquer outro conteúdo que desejar.</p>
+    <div class="row mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Opiniões da Empresa {{company_name}}</h5>
+                <p class="card-text">A empresa {{company_name}} apresenta {{ analysis['positive']}}% de
+                    tweets com opiniões positivas, {{ analysis['neutral']}}% de tweets com opiniões
+                    neutras e {{ analysis['negative']}}% de tweets com opiniões negativas.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="mt-4">
-        <h3>EXEMPLOS DE TWEETS AVALIADOS:</h3>
+    <div class="row mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h3>Opinião da IA</h3>
+                {% if neutral < positive and positive> negative %}
+                    <p class="card-text">A empresa {{company_name}} tem recebido uma quantidade significativa de
+                        opiniões
+                        positivas em suas
+                        análises de tweets.
+                        Os usuários elogiam seus produtos de alta qualidade, atendimento ao cliente excepcional e
+                        compromisso
+                        com a inovação. As avaliações favoráveis refletem a satisfação dos clientes e indicam que a
+                        empresa
+                        está
+                        indo bem em termos de reputação e desempenho no mercado.</p>
+
+                    {% elif neutral < negative and negative> positive %}
+                        <p class="card-text">As análises de tweets revelam que a empresa {{company_name}} tem recebido
+                            um
+                            número
+                            significativo de
+                            opiniões negativas. Os usuários expressam insatisfação com a qualidade dos produtos,
+                            problemas
+                            recorrentes no atendimento ao cliente e atrasos nas entregas. Essas críticas indicam que a
+                            empresa
+                            precisa fazer melhorias em várias áreas para melhorar sua reputação e garantir a satisfação
+                            dos
+                            clientes. É essencial que a empresa ouça atentamente essas opiniões e tome medidas
+                            corretivas
+                            para
+                            resolver os problemas levantados.</p>
+                        {% else %}
+                        <p class="card-text">Ao analisar os tweets relacionados à empresa {{company_name}}, observamos
+                            que a
+                            maioria das opiniões
+                            é neutra. Os usuários não expressam sentimentos extremos nem positivos nem negativos em
+                            relação
+                            à
+                            empresa. Essa neutralidade pode ser interpretada como um reflexo de uma experiência mediana
+                            ou
+                            uma
+                            falta de engajamento significativo por parte dos usuários. A empresa pode considerar
+                            explorar
+                            estratégias para atrair opiniões mais favoráveis ou engajar melhor sua base de clientes.</p>
+                        {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 mb-2">
+        <h3>Exemplos de tweets avaliados:</h3>
         <table class="table ">
             <thead>
                 <tr>
@@ -44,7 +96,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for tweet in tweets_details[:3] %}
+                {% for tweet in tweets_details[:4] %}
                 <tr>
                     <td>
                         {{tweet.date}}
@@ -58,15 +110,6 @@
         </table>
     </div>
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <canvas id="doughnutChart"></canvas>
-        </div>
-    </div>
-</div>
-
 <script>
     var positiveValue = {{ analysis['positive']}};
     var negativeValue = {{ analysis['negative']}};
@@ -86,6 +129,52 @@
             responsive: true,
             legend: {
                 position: 'bottom'
+            }
+        }
+    });
+
+    var dates = {{ days| tojson }};
+    var positiveValues = {{ positive| tojson }};
+    var negativeValues = {{ negative| tojson }};
+    var neutralValues = {{ neutral| tojson }};
+
+    var barChart = new Chart(document.getElementById('barChart'), {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [
+                {
+                    label: 'Positivo',
+                    backgroundColor: 'green',
+                    data: positiveValues
+                },
+                {
+                    label: 'Negativo',
+                    backgroundColor: 'red',
+                    data: negativeValues
+                },
+                {
+                    label: 'Neutro',
+                    backgroundColor: 'gray',
+                    data: neutralValues
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Data'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Porcentagem'
+                    }
+                }
             }
         }
     });

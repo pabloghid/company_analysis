@@ -6,7 +6,7 @@ from google_trans_new import google_translator
 def percentage(parte, total):
     return 100*float(parte)/float(total)
 
-def analyser(content):
+def analyzer(content):
     positive = 0
     negative = 0
     neutral = 0
@@ -14,9 +14,13 @@ def analyser(content):
 
     contents = []
     for sentence in content:
-        if detect(sentence) != 'en':
-            sentence = translate(sentence)
-        contents.append(TextBlob(sentence))
+        try:
+            language = detect(sentence)
+            if language != 'en':
+                sentence = translate(sentence)
+            contents.append(TextBlob(sentence))
+        except:
+            pass
 
     for item in contents:
         polarity += item.sentiment.polarity
