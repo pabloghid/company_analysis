@@ -8,6 +8,9 @@ Trabalho para a disciplina de Inteligência Artificial
 - [x] Analisar informações sobre empresa buscada 
 - [x] Mostrar ao usuário em formas gráficas
 
+## Funcionamento
+A aplicação é capaz de trazer opiniões sobre uma palavra, empresa, hashtag inserida no campo de busca. Após a busca, ela mostrará gráficos sobre posicionamentos positivos, neutros ou negativos com base em tweets sobre a pesquisa, apresentando gráficos e exemplos de tweets.
+
 ## Instalação
 
 Versão do Python: 3.10
